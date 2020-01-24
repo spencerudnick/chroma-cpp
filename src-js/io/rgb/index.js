@@ -1,17 +1,17 @@
 const chroma = require('../../chroma');
 const Color = require('../../Color');
 const input = require('../input');
-const {unpack, type} = require('../../utils');
-const {round} = Math;
+const { unpack, type } = require('../../utils');
+const { round } = Math;
 
-Color.prototype.rgb = function(rnd=true) {
-    if (rnd === false) return this._rgb.slice(0,3);
-    return this._rgb.slice(0,3).map(round);
+Color.prototype.rgb = function (rnd = true) {
+    if (rnd === false) return this._rgb.slice(0, 3);
+    return this._rgb.slice(0, 3).map(round);
 }
 
-Color.prototype.rgba = function(rnd=true) {
-    return this._rgb.slice(0,4).map((v,i) => {
-        return i<3 ? (rnd === false ? v : round(v)) : v;
+Color.prototype.rgba = function (rnd = true) {
+    return this._rgb.slice(0, 4).map((v, i) => {
+        return i < 3 ? (rnd === false ? v : round(v)) : v;
     });
 };
 
